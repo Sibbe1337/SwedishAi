@@ -1,0 +1,230 @@
+{% extends "base.html" %}
+
+{% block title %}SwedishAI - Dokumentation & API{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-[#f5f5f7] dark:bg-[#1c1c1e]">
+    <!-- Hero section -->
+    <section class="pt-32 pb-12">
+        <div class="container px-4 mx-auto">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h1 class="text-4xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    Utvecklardokumentation
+                </h1>
+                <p class="text-xl text-gray-600 dark:text-gray-400">
+                    Bygg framtidens svenska applikationer med SwedishAI's API
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main documentation -->
+    <section class="pb-24">
+        <div class="container px-4 mx-auto">
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Sidebar navigation -->
+                <div class="lg:w-64 flex-shrink-0">
+                    <div class="sticky top-24">
+                        <nav class="space-y-1">
+                            <a href="#getting-started" class="block px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+                                Kom igång
+                            </a>
+                            <a href="#api-reference" class="block px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+                                API Referens
+                            </a>
+                            <a href="#models" class="block px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+                                Modeller
+                            </a>
+                            <a href="#examples" class="block px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+                                Exempel
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- Main content -->
+                <div class="flex-1 max-w-4xl">
+                    <!-- Getting Started -->
+                    <section id="getting-started" class="mb-16">
+                        <h2 class="text-3xl font-bold mb-6">Kom igång</h2>
+                        <div class="prose dark:prose-invert max-w-none">
+                            <p class="mb-4">
+                                SwedishAI erbjuder ett kraftfullt API för naturlig språkbehandling på svenska. 
+                                Vårt API ger dig tillgång till state-of-the-art språkmodeller optimerade för svenska.
+                            </p>
+                            
+                            <h3 class="text-xl font-semibold mt-8 mb-4">Autentisering</h3>
+                            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 mb-4">
+                                <code class="text-sm">
+                                    curl https://api.swedishai.com/v1/generate \<br>
+                                    &nbsp;&nbsp;-H "Authorization: Bearer YOUR_API_KEY" \<br>
+                                    &nbsp;&nbsp;-H "Content-Type: application/json" \<br>
+                                    &nbsp;&nbsp;-d '{"prompt": "Sammanfatta denna text..."}'
+                                </code>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- API Reference -->
+                    <section id="api-reference" class="mb-16">
+                        <h2 class="text-3xl font-bold mb-6">API Referens</h2>
+                        
+                        <div class="space-y-8">
+                            <!-- Text Generation -->
+                            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
+                                <h3 class="text-xl font-semibold mb-4">Text Generation</h3>
+                                <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                    Generera text baserat på en prompt.
+                                </p>
+                                <h4 class="font-semibold mb-2">Parametrar</h4>
+                                <ul class="list-disc list-inside text-gray-600 dark:text-gray-400 mb-4">
+                                    <li>prompt (string): Text att utgå ifrån</li>
+                                    <li>max_tokens (int): Max antal tokens att generera (default: 100)</li>
+                                    <li>temperature (float): Kreativitet i genereringen (0.0-1.0)</li>
+                                    <li>top_p (float): Nucleus sampling parameter (0.0-1.0)</li>
+                                </ul>
+                                <h4 class="font-semibold mb-2">Exempel respons</h4>
+                                <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-4">
+                                    <pre class="text-sm bg-[#f5f5f7] dark:bg-[#1c1c1e] border border-gray-200/50 dark:border-gray-800/50"><code>{
+    "text": "Genererad text här...",
+    "usage": {
+        "prompt_tokens": 10,
+        "completion_tokens": 50,
+        "total_tokens": 60
+    }
+}</code></pre>
+                                </div>
+                            </div>
+
+                            <!-- Chat Completion -->
+                            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
+                                <h3 class="text-xl font-semibold mb-4">Chat Completion</h3>
+                                <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                    Skapa konversationsbaserade svar med historikkontext.
+                                </p>
+                                <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-4">
+                                    <pre class="text-sm bg-[#f5f5f7] dark:bg-[#1c1c1e] border border-gray-200/50 dark:border-gray-800/50"><code>POST /v1/chat/completions
+
+{
+    "messages": [
+        {"role": "system", "content": "Du är en hjälpsam AI-assistent"},
+        {"role": "user", "content": "Berätta om Sverige"},
+        {"role": "assistant", "content": "Sverige är ett land i Norden..."},
+        {"role": "user", "content": "Fortsätt berätta"}
+    ],
+    "temperature": 0.7
+}</code></pre>
+                                </div>
+                            </div>
+
+                            <!-- Text Analysis -->
+                            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
+                                <h3 class="text-xl font-semibold mb-4">Text Analysis</h3>
+                                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                    <div>
+                                        <h4 class="font-semibold mb-2">Funktioner</h4>
+                                        <ul class="list-disc list-inside text-gray-600 dark:text-gray-400">
+                                            <li>Sentimentanalys</li>
+                                            <li>Nyckelordsextraktion</li>
+                                            <li>Textklassificering</li>
+                                            <li>Entitetsigenkänning</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold mb-2">Användningsområden</h4>
+                                        <ul class="list-disc list-inside text-gray-600 dark:text-gray-400">
+                                            <li>Kundrecensioner</li>
+                                            <li>Nyhetsartiklar</li>
+                                            <li>Sociala medier</li>
+                                            <li>Dokumentanalys</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Models -->
+                    <section id="models" class="mb-16">
+                        <h2 class="text-3xl font-bold mb-6">Modeller</h2>
+                        
+                        <div class="grid gap-8">
+                            <!-- GPT-SW3 Large -->
+                            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
+                                <h3 class="text-xl font-semibold mb-4">GPT-SW3 Large</h3>
+                                <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                    Vår mest avancerade språkmodell, optimerad för svenska.
+                                </p>
+                                <ul class="list-disc list-inside text-gray-600 dark:text-gray-400">
+                                    <li>1.3B parametrar</li>
+                                    <li>Tränad på svensk text</li>
+                                    <li>Optimerad för naturlig konversation</li>
+                                    <li>Kontextuell förståelse</li>
+                                    <li>Avancerad textgenerering</li>
+                                </ul>
+                            </div>
+
+                            <!-- GPT-SW3 Base -->
+                            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
+                                <h3 class="text-xl font-semibold mb-4">GPT-SW3 Base</h3>
+                                <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                    Snabb och effektiv modell för enklare uppgifter.
+                                </p>
+                                <ul class="list-disc list-inside text-gray-600 dark:text-gray-400">
+                                    <li>126M parametrar</li>
+                                    <li>Optimerad för snabb inferens</li>
+                                    <li>Perfekt för realtidsapplikationer</li>
+                                    <li>Låg latens</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Kommande modeller -->
+                            <div class="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-xl p-6 shadow-lg">
+                                <h3 class="text-xl font-semibold mb-4">Kommande modeller</h3>
+                                <p class="mb-4">
+                                    Vi utvecklar ständigt nya modeller för att möta framtidens behov.
+                                </p>
+                                <ul class="list-disc list-inside">
+                                    <li>GPT-SW4 (Under utveckling)</li>
+                                    <li>Specialiserade modeller för olika branscher</li>
+                                    <li>Multimodala modeller för text och bild</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Examples -->
+                    <section id="examples" class="mb-16">
+                        <h2 class="text-3xl font-bold mb-6">Exempel</h2>
+                        
+                        <div class="space-y-8">
+                            <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
+                                <h3 class="text-xl font-semibold mb-4">Textgenerering</h3>
+                                <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-4">
+                                    <pre class="text-sm bg-[#f5f5f7] dark:bg-[#1c1c1e] border border-gray-200/50 dark:border-gray-800/50"><code>
+import requests
+
+response = requests.post(
+    "https://api.swedishai.com/v1/generate",
+    headers={
+        "Authorization": f"Bearer {API_KEY}",
+        "Content-Type": "application/json"
+    },
+    json={
+        "prompt": "Skriv en sammanfattning om AI i Sverige",
+        "max_tokens": 100
+    }
+)
+
+print(response.json()["text"])
+                                    </code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %} 

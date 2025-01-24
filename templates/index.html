@@ -1,0 +1,359 @@
+{% extends "base.html" %}
+
+{% block title %}SwedishAI - Sveriges ledande AI-plattform{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-[#f5f5f7] dark:bg-[#1c1c1e]">
+    <!-- Hero section -->
+    <section class="pt-32 pb-24 relative overflow-hidden">
+        <div class="container px-4 mx-auto relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-5xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-[#007AFF] to-[#5856D6] bg-clip-text text-transparent">
+                    Sveriges mest avancerade AI-plattform
+                </h1>
+                <p class="text-xl text-gray-600 dark:text-gray-400 mb-12 leading-relaxed">
+                    Kraftfull AI-teknologi optimerad för svenska språket. Bygg framtidens 
+                    applikationer med vår API eller använd vår chat direkt.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="/register" 
+                       class="px-8 py-4 bg-[#007AFF] text-white rounded-xl hover:bg-[#0071e3] 
+                              dark:bg-[#0A84FF] dark:hover:bg-[#0074e3] transition-colors duration-200 font-medium">
+                        Kom igång gratis
+                    </a>
+                    <a href="/docs" 
+                       class="px-8 py-4 border-2 border-blue-600 text-blue-600 rounded-xl 
+                              hover:bg-blue-50 transition-colors duration-200 font-medium">
+                        Utforska API
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Bakgrundsdekor -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-6xl">
+            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-500/10 to-purple-500/10 
+                        rounded-full filter blur-3xl"></div>
+        </div>
+    </section>
+
+    <!-- Features section -->
+    <section id="features" class="py-24 bg-gray-50 dark:bg-gray-800">
+        <div class="container px-4 mx-auto">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">Kraftfulla funktioner</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400">
+                    Allt du behöver för att bygga nästa generations AI-applikationer
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Textgenerering -->
+                <div class="bg-white/95 dark:bg-[#2c2c2e] rounded-2xl p-8 shadow-lg backdrop-blur-lg 
+                            border border-gray-200/50 dark:border-gray-800/50">
+                    <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                  d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">DeepSeek 33B</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">
+                        State-of-the-art AI-modell med 671B totala parametrar.
+                    </p>
+                    <ul class="list-disc list-inside text-gray-600 dark:text-gray-400">
+                        <li>671B totala parametrar (37B aktiva)</li>
+                        <li>128K tokens kontextfönster</li>
+                        <li>Mixture-of-Experts arkitektur</li>
+                        <li>Avancerad kodförståelse</li>
+                        <li>Flerspråkigt stöd</li>
+                    </ul>
+                </div>
+
+                <!-- Konversation -->
+                <div class="bg-white/95 dark:bg-[#2c2c2e] rounded-2xl p-8 shadow-lg backdrop-blur-lg 
+                            border border-gray-200/50 dark:border-gray-800/50">
+                    <div class="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                  d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Konversation</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Naturliga dialoger på svenska. Perfekt för chatbotar och 
+                        kundtjänstautomatisering.
+                    </p>
+                </div>
+
+                <!-- API -->
+                <div class="bg-white/95 dark:bg-[#2c2c2e] rounded-2xl p-8 shadow-lg backdrop-blur-lg 
+                            border border-gray-200/50 dark:border-gray-800/50">
+                    <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Kraftfullt API</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        RESTful API för enkel integration. Byggd för utvecklare, 
+                        med utvecklare i åtanke.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Demo section -->
+    <section class="py-24">
+        <div class="container px-4 mx-auto">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">Testa vår AI direkt</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400">
+                    Se hur vår svenska AI-modell fungerar i praktiken
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden">
+                <!-- Chat messages -->
+                <div class="p-6 border-b border-gray-200 dark:border-gray-700">
+                    <div class="space-y-6">
+                        <!-- AI Message -->
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="w-8 h-8 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                              d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="ml-4 bg-gray-100 dark:bg-gray-700 rounded-lg px-4 py-2 max-w-[80%]">
+                                <p class="text-gray-700 dark:text-gray-300">
+                                    Hej! Jag är SwedishAI, en AI-assistent optimerad för svenska språket. 
+                                    Hur kan jag hjälpa dig idag?
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- User Message -->
+                        <div class="flex items-start justify-end">
+                            <div class="mr-4 bg-blue-600 rounded-lg px-4 py-2 max-w-[80%]">
+                                <p class="text-white">
+                                    Kan du berätta mer om hur du kan hjälpa företag med kundtjänst?
+                                </p>
+                            </div>
+                            <div class="flex-shrink-0">
+                                <div class="w-8 h-8 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- AI Response -->
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="w-8 h-8 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                              d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="ml-4 bg-gray-100 dark:bg-gray-700 rounded-lg px-4 py-2 max-w-[80%]">
+                                <p class="text-gray-700 dark:text-gray-300">
+                                    Jag kan hjälpa företag med automatiserad kundsupport dygnet runt genom att:
+                                    <br><br>
+                                    • Svara på vanliga frågor
+                                    <br>
+                                    • Guida kunder genom processer
+                                    <br>
+                                    • Hantera ärenden på svenska
+                                    <br>
+                                    • Integrera med befintliga system
+                                    <br><br>
+                                    Vill du veta mer om någon specifik funktion?
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Chat input -->
+                <div class="p-4 bg-gray-50 dark:bg-gray-900">
+                    <div class="flex items-center">
+                        <input type="text" 
+                               placeholder="Skriv ett meddelande..." 
+                               class="flex-1 px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                               disabled>
+                        <a href="/register" 
+                           class="ml-4 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200">
+                            Testa själv
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use cases -->
+    <section id="use-cases" class="py-24">
+        <div class="container px-4 mx-auto">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">Användningsområden</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400">
+                    Upptäck hur SwedishAI kan transformera din verksamhet
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <!-- Content Creation -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4">Content Creation</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-green-500 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-gray-600 dark:text-gray-400">
+                                Automatiserad innehållsproduktion för bloggar och sociala medier
+                            </span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-green-500 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-gray-600 dark:text-gray-400">
+                                SEO-optimerat innehåll på svenska
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Customer Service -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4">Kundtjänst</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-green-500 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-gray-600 dark:text-gray-400">
+                                24/7 automatiserad kundsupport
+                            </span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-green-500 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-gray-600 dark:text-gray-400">
+                                Intelligent ärendehantering
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing section -->
+    <section id="pricing" class="py-24 bg-gray-50 dark:bg-gray-800">
+        <div class="container px-4 mx-auto">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">Enkla och transparenta priser</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400">
+                    Välj den plan som passar dina behov bäst
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Free -->
+                <div class="bg-white/95 dark:bg-[#2c2c2e] rounded-2xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4">Gratis</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">Perfekt för att testa</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold">0 kr</span>
+                        <span class="text-gray-600 dark:text-gray-400">/månad</span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-gray-600 dark:text-gray-400">100 meddelanden/månad</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-gray-600 dark:text-gray-400">Grundläggande API</span>
+                        </li>
+                    </ul>
+                    <a href="/register" class="block w-full py-3 px-4 text-center border-2 border-blue-600 text-blue-600 
+                                             rounded-lg hover:bg-blue-50 transition-colors duration-200">
+                        Kom igång
+                    </a>
+                </div>
+
+                <!-- Pro -->
+                <div class="bg-[#007AFF] dark:bg-[#0A84FF] text-white rounded-2xl p-8 shadow-lg">
+                    <div class="absolute top-0 right-0 mt-4 mr-4">
+                        <span class="bg-white text-blue-600 text-sm font-semibold px-3 py-1 rounded-full">
+                            Populärast
+                        </span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Pro</h3>
+                    <p class="text-blue-100 mb-6">För professionellt bruk</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold">99 kr</span>
+                        <span class="text-blue-100">/månad</span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>Obegränsade meddelanden</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span>Full API-åtkomst</span>
+                        </li>
+                    </ul>
+                    <a href="/upgrade" class="block w-full py-3 px-4 text-center bg-white text-blue-600 
+                                            rounded-lg hover:bg-blue-50 transition-colors duration-200">
+                        Uppgradera
+                    </a>
+                </div>
+
+                <!-- Enterprise -->
+                <div class="bg-white/95 dark:bg-[#2c2c2e] rounded-2xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4">Enterprise</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">För stora organisationer</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold">Kontakta oss</span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-gray-600 dark:text-gray-400">Anpassade lösningar</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-gray-600 dark:text-gray-400">Dedikerad support</span>
+                        </li>
+                    </ul>
+                    <a href="/contact" class="block w-full py-3 px-4 text-center border-2 border-blue-600 text-blue-600 
+                                            rounded-lg hover:bg-blue-50 transition-colors duration-200">
+                        Kontakta oss
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

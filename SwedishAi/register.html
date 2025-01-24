@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block title %}SwedishAI - Skapa konto{% endblock %}
+
+{% block content %}
+<div class="min-h-screen flex items-center justify-center py-32">
+    <div class="max-w-md w-full space-y-8 p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-lg">
+        <div>
+            <h2 class="text-3xl font-bold text-center mb-4">Skapa konto</h2>
+            <p class="text-center text-gray-600 dark:text-gray-400">
+                Börja använda SwedishAI idag
+            </p>
+        </div>
+        <form class="space-y-6" id="registerForm">
+            <div>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">E-post</label>
+                <input type="email" name="email" required 
+                       class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 
+                              rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Lösenord</label>
+                <input type="password" name="password" required 
+                       class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 
+                              rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
+            </div>
+            <div>
+                <button type="submit" 
+                        class="w-full py-3 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 
+                               transition-colors duration-200">
+                    Skapa konto
+                </button>
+            </div>
+        </form>
+        <div class="text-center mt-4">
+            <p class="text-gray-600 dark:text-gray-400">
+                Har du redan ett konto? 
+                <a href="/login" class="text-blue-600 hover:text-blue-700">Logga in</a>
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.getElementById('registerForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    
+    try {
+        const response = await fetch('/register', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                email: formData.get('email'),
+                password: formData.get('password')
+            })
+        });
+        
+        if (response.ok) {
+            // Automatisk inloggning efter registrering
+            const loginResponse = await fetch('/token', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    username: formData.get('email'),
+                    password: formData.get('password')
+                })
+            });
+            
+            if (loginResponse.ok) {
+                const data = await loginResponse.json();
+                localStorage.setItem('token', data.access_token);
+                window.location.href = '/chat';
+            }
+        } else {
+            const data = await response.json();
+            throw new Error(data.detail || 'Registreringen misslyckades');
+        }
+    } catch (error) {
+        alert(error.message);
+    }
+});
+</script>
+{% endblock %} 

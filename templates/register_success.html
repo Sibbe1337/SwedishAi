@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registrering Lyckades - SwedishAI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .success-container {
+            background-color: #e8f5e9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        .api-key {
+            background-color: white;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            font-family: monospace;
+            word-break: break-all;
+        }
+        .button {
+            display: inline-block;
+            background-color: #0066cc;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Registrering Lyckades!</h1>
+    
+    <div class="success-container">
+        <h2>Din API-nyckel</h2>
+        <p>Spara denna nyckel på ett säkert ställe - du kommer behöva den för att använda tjänsten:</p>
+        
+        <div class="api-key">
+            {{ api_key }}
+        </div>
+        
+        <a href="/" class="button">Gå till chatten</a>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+
+{% block title %}SwedishAI - Kontakta oss{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-white dark:bg-gray-900">
+    <!-- Hero section -->
+    <section class="pt-32 pb-12">
+        <div class="container px-4 mx-auto">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h1 class="text-4xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    Kontakta SwedishAI
+                </h1>
+                <p class="text-xl text-gray-600 dark:text-gray-400">
+                    Vi hjälper dig att hitta den bästa lösningen för dina behov
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact section -->
+    <section class="pb-24">
+        <div class="container px-4 mx-auto">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Contact form -->
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8">
+                        <h2 class="text-2xl font-bold mb-6">Skicka meddelande</h2>
+                        <form id="contactForm" class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                    Företag
+                                </label>
+                                <input type="text" name="company" 
+                                       class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 
+                                              focus:ring-2 focus:ring-blue-500 dark:bg-gray-700">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                    Namn
+                                </label>
+                                <input type="text" name="name" required
+                                       class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 
+                                              focus:ring-2 focus:ring-blue-500 dark:bg-gray-700">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                    E-post
+                                </label>
+                                <input type="email" name="email" required
+                                       class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 
+                                              focus:ring-2 focus:ring-blue-500 dark:bg-gray-700">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                    Meddelande
+                                </label>
+                                <textarea name="message" rows="4" required
+                                          class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 
+                                                 focus:ring-2 focus:ring-blue-500 dark:bg-gray-700"></textarea>
+                            </div>
+                            <button type="submit" 
+                                    class="w-full py-3 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 
+                                           transition-colors duration-200">
+                                Skicka meddelande
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Contact info -->
+                    <div class="space-y-8">
+                        <div>
+                            <h2 class="text-2xl font-bold mb-6">Kontaktinformation</h2>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <svg class="w-6 h-6 text-blue-600 mt-1 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                    </svg>
+                                    <div>
+                                        <h3 class="font-semibold mb-1">E-post</h3>
+                                        <p class="text-gray-600 dark:text-gray-400">kontakt@swedishai.se</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <svg class="w-6 h-6 text-blue-600 mt-1 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    </svg>
+                                    <div>
+                                        <h3 class="font-semibold mb-1">Adress</h3>
+                                        <p class="text-gray-600 dark:text-gray-400">
+                                            Kungsgatan 1<br>
+                                            111 43 Stockholm
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Enterprise info -->
+                        <div class="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-2xl p-8">
+                            <h3 class="text-xl font-bold mb-4">Enterprise-lösningar</h3>
+                            <p class="mb-6">
+                                Behöver ditt företag en skräddarsydd AI-lösning? Vi erbjuder anpassade 
+                                integrationer och dedikerad support för större organisationer.
+                            </p>
+                            <ul class="space-y-3 mb-6">
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                    Dedikerad kontaktperson
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                    Anpassade API-integrationer
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                    Prioriterad support 24/7
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% block extra_js %}
+<script>
+document.getElementById('contactForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    
+    try {
+        const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(Object.fromEntries(formData))
+        });
+        
+        if (response.ok) {
+            alert('Tack för ditt meddelande! Vi återkommer så snart som möjligt.');
+            e.target.reset();
+        } else {
+            throw new Error('Något gick fel. Försök igen senare.');
+        }
+    } catch (error) {
+        alert(error.message);
+    }
+});
+</script>
+{% endblock %}
+
+{% endblock %} 

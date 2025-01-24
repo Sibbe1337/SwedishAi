@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block title %}SwedishAI - Om oss{% endblock %}
+
+{% block content %}
+<section class="pt-32 pb-24 bg-white dark:bg-gray-900">
+    <div class="container px-4 mx-auto">
+        <!-- Hero -->
+        <div class="max-w-3xl mx-auto text-center mb-16">
+            <h1 class="text-4xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Vi gör AI tillgängligt på svenska
+            </h1>
+            <p class="text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
+                SwedishAI grundades med visionen att göra avancerad AI-teknologi tillgänglig för alla som 
+                kommunicerar på svenska. Vi tror på kraften i naturlig språkbehandling på vårt modersmål.
+            </p>
+        </div>
+
+        <!-- Mission & Vision -->
+        <div class="grid md:grid-cols-2 gap-12 mb-24">
+            <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl">
+                <h2 class="text-2xl font-bold mb-4">Vår Mission</h2>
+                <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    Att demokratisera tillgången till AI-driven textbehandling och innehållsskapande på svenska. 
+                    Vi arbetar för att göra avancerad språkteknologi tillgänglig för alla - från studenter 
+                    och skribenter till företag och organisationer.
+                </p>
+            </div>
+            <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl">
+                <h2 class="text-2xl font-bold mb-4">Vår Vision</h2>
+                <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    En framtid där språkbarriärer inte längre hindrar innovation och kreativitet. 
+                    Där svensk AI-teknologi driver utvecklingen framåt och gör det möjligt för alla 
+                    att uttrycka sig bättre på svenska.
+                </p>
+            </div>
+        </div>
+
+        <!-- Teknologi -->
+        <div class="mb-24">
+            <h2 class="text-3xl font-bold text-center mb-12">Vår Teknologi</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">GPT-SW3</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Byggd på den senaste språkmodellteknologin, specialtränad på svenska texter.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Svensk Optimering</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Anpassad för svenska språkets unika egenskaper och kulturella kontext.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Realtidsbearbetning</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Snabb och effektiv textbehandling för omedelbar respons.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team -->
+        <div>
+            <h2 class="text-3xl font-bold text-center mb-12">Vårt Team</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-32 h-32 bg-gray-200 dark:bg-gray-700 rounded-full mx-auto mb-4"></div>
+                    <h3 class="text-xl font-semibold">Erik Svensson</h3>
+                    <p class="text-gray-600 dark:text-gray-400">AI Research Lead</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-32 h-32 bg-gray-200 dark:bg-gray-700 rounded-full mx-auto mb-4"></div>
+                    <h3 class="text-xl font-semibold">Maria Andersson</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Language Technology Expert</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-32 h-32 bg-gray-200 dark:bg-gray-700 rounded-full mx-auto mb-4"></div>
+                    <h3 class="text-xl font-semibold">Johan Lindström</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Product Development</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 

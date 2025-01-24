@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block title %}SwedishAI - Uppgradera till Premium{% endblock %}
+
+{% block content %}
+<div class="py-24 bg-gray-50 dark:bg-gray-900">
+    <div class="container px-4 mx-auto">
+        <!-- Header -->
+        <div class="max-w-2xl mx-auto text-center mb-16">
+            <h2 class="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
+                Uppgradera till Premium
+            </h2>
+            <p class="text-xl text-gray-600 dark:text-gray-400">
+                Få tillgång till alla funktioner och obegränsade meddelanden
+            </p>
+        </div>
+
+        <!-- Pricing Cards -->
+        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+            <!-- Free Plan -->
+            <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
+                <div class="mb-8">
+                    <h3 class="text-2xl font-bold mb-4">Gratis</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Perfekt för att testa tjänsten</p>
+                    <div class="mt-4">
+                        <span class="text-4xl font-bold">0 kr</span>
+                        <span class="text-gray-600 dark:text-gray-400">/månad</span>
+                    </div>
+                </div>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        5 meddelanden per dag
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        Grundläggande funktioner
+                    </li>
+                </ul>
+                <button class="w-full py-3 px-4 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors duration-200">
+                    Nuvarande plan
+                </button>
+            </div>
+
+            <!-- Premium Plan -->
+            <div class="bg-blue-600 rounded-2xl p-8 shadow-lg text-white transform hover:scale-105 transition-transform duration-300">
+                <div class="mb-8">
+                    <h3 class="text-2xl font-bold mb-4">Premium</h3>
+                    <p class="text-blue-100">Allt du behöver för professionellt bruk</p>
+                    <div class="mt-4">
+                        <span class="text-4xl font-bold">99 kr</span>
+                        <span class="text-blue-100">/månad</span>
+                    </div>
+                </div>
+                <div class="text-lg mb-4">
+                    <h3 class="font-bold mb-2">Pro-funktioner:</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Tillgång till DeepSeek 33B</li>
+                        <li>Obegränsade meddelanden</li>
+                        <li>Längre konversationskontext (4096 tokens)</li>
+                        <li>Prioriterad API-åtkomst</li>
+                    </ul>
+                </div>
+                <button id="upgradeButton" 
+                        class="w-full py-3 px-4 bg-white text-blue-600 rounded-lg hover:bg-blue-50 transition-colors duration-200">
+                    Uppgradera nu
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.getElementById('upgradeButton').addEventListener('click', async () => {
+    try {
+        const response = await fetch('/upgrade', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('token')}`
+            }
+        });
+        
+        if (response.ok) {
+            window.location.href = '/chat';
+        } else {
+            throw new Error('Kunde inte uppgradera. Försök igen senare.');
+        }
+    } catch (error) {
+        alert(error.message);
+    }
+});
+</script>
+{% endblock %} 

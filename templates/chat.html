@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}SwedishAI - Chat{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-[#f5f5f7] dark:bg-[#1c1c1e]">
+    <!-- Chat container -->
+    <div class="bg-white/95 dark:bg-[#2c2c2e] rounded-2xl shadow-lg backdrop-blur-lg 
+                border border-gray-200/50 dark:border-gray-800/50">
+
+    <!-- Messages -->
+    <div class="bg-[#f5f5f7] dark:bg-[#3a3a3c]">
+
+    <!-- Sidopanel -->
+    <div class="hidden lg:flex lg:w-72 border-r border-gray-200 dark:border-gray-700">
+        <div class="flex flex-col w-full">
+            <div class="p-4 border-b border-gray-200 dark:border-gray-700">
+                <h2 class="text-lg font-semibold dark:text-white">Konversationer</h2>
+            </div>
+            <div class="flex-1 overflow-y-auto" id="conversationList">
+                <!-- Konversationer laddas dynamiskt -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat area -->
+    <div class="flex-1 flex flex-col">
+        <!-- Chat history -->
+        <div class="flex-1 overflow-y-auto p-4" id="chatHistory">
+            <!-- Messages -->
+        </div>
+
+        <!-- Input area -->
+        <div class="border-t border-gray-200 dark:border-gray-700 p-4">
+            <form id="chatForm" class="flex gap-2">
+                <input type="text" 
+                       id="userInput" 
+                       class="flex-1 rounded-lg border border-gray-300 dark:border-gray-600 p-3"
+                       placeholder="Skriv ditt meddelande...">
+                <button type="submit" 
+                        class="px-6 py-3 bg-[#007AFF] text-white rounded-lg hover:bg-[#0071e3] dark:bg-[#0A84FF] dark:hover:bg-[#0074e3]">
+                    Skicka
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Chat functionality (från tidigare implementation)
+</script>
+{% endblock %} 

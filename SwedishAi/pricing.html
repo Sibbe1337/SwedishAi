@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+
+{% block title %}SwedishAI - Priser{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-white dark:bg-gray-900">
+    <!-- Hero section -->
+    <section class="pt-32 pb-12">
+        <div class="container px-4 mx-auto">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h1 class="text-4xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    Transparenta priser för alla behov
+                </h1>
+                <p class="text-xl text-gray-600 dark:text-gray-400">
+                    Välj den plan som passar dig bäst. Uppgradera eller nedgradera när som helst.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing section -->
+    <section class="pb-24">
+        <div class="container px-4 mx-auto">
+            <!-- Billing toggle -->
+            <div class="flex justify-center mb-12" x-data="{ annual: false }">
+                <div class="flex items-center space-x-4">
+                    <span class="text-gray-600 dark:text-gray-400" :class="{ 'font-semibold': !annual }">Månadsvis</span>
+                    <button class="relative rounded-full w-14 h-8 transition duration-200 ease-linear"
+                            :class="[annual ? 'bg-blue-600' : 'bg-gray-300']"
+                            @click="annual = !annual">
+                        <div class="absolute top-1 left-1 w-6 h-6 rounded-full transition duration-100 ease-linear bg-white"
+                             :class="[annual ? 'transform translate-x-6' : '']"></div>
+                    </button>
+                    <span class="text-gray-600 dark:text-gray-400" :class="{ 'font-semibold': annual }">Årsvis (2 månader gratis)</span>
+                </div>
+            </div>
+
+            <!-- Pricing cards -->
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Free plan -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8">
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold mb-4">Gratis</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Perfekt för att testa tjänsten</p>
+                        <div class="mt-4">
+                            <span class="text-4xl font-bold">0 kr</span>
+                            <span class="text-gray-600 dark:text-gray-400">/månad</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            100 meddelanden per månad
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Grundläggande API-åtkomst
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Community support
+                        </li>
+                    </ul>
+                    <a href="/register" class="block w-full py-3 px-4 text-center border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors duration-200">
+                        Kom igång gratis
+                    </a>
+                </div>
+
+                <!-- Pro plan -->
+                <div class="bg-blue-600 rounded-2xl shadow-lg p-8 text-white transform scale-105">
+                    <div class="absolute top-0 right-0 mt-4 mr-4">
+                        <span class="bg-white text-blue-600 text-sm font-semibold px-3 py-1 rounded-full">Populärast</span>
+                    </div>
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold mb-4">Pro</h3>
+                        <p class="text-blue-100">För professionellt bruk</p>
+                        <div class="mt-4">
+                            <span class="text-4xl font-bold" x-text="annual ? '990 kr' : '99 kr'"></span>
+                            <span class="text-blue-100">/månad</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Obegränsade meddelanden
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Full API-åtkomst
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Prioriterad support
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Avancerade funktioner
+                        </li>
+                    </ul>
+                    <a href="/upgrade" class="block w-full py-3 px-4 text-center bg-white text-blue-600 rounded-lg hover:bg-blue-50 transition-colors duration-200">
+                        Uppgradera nu
+                    </a>
+                </div>
+
+                <!-- Enterprise plan -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8">
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold mb-4">Enterprise</h3>
+                        <p class="text-gray-600 dark:text-gray-400">För stora organisationer</p>
+                        <div class="mt-4">
+                            <span class="text-4xl font-bold">Kontakta oss</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Anpassad användning
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Dedikerad support
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            SLA-garanti
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            Anpassade integrationer
+                        </li>
+                    </ul>
+                    <a href="/contact" class="block w-full py-3 px-4 text-center border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors duration-200">
+                        Kontakta oss
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="pb-24">
+        <div class="container px-4 mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">Vanliga frågor</h2>
+            <div class="max-w-3xl mx-auto space-y-6">
+                <div class="bg-white dark:bg-gray-800 rounded-lg p-6">
+                    <h3 class="text-lg font-semibold mb-2">Kan jag byta plan när som helst?</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Ja, du kan uppgradera eller nedgradera din plan när som helst. Ändringar träder i kraft vid nästa faktureringscykel.
+                    </p>
+                </div>
+                <!-- Fler FAQ items här -->
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %} 
